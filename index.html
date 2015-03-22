@@ -1,6 +1,67 @@
 <!DOCTYPE>
 <html>
+<head>
+	<title>Ace Adventure Comics</title>
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
 <body>
+	<div class="header" id="header-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="header-left">
+						<div class="menu">
+							<a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
+							<ul class="nav" id="nav">
+								<li><a href="#">Home</a></li>
+								<li><a href="#">Shop</a></li>
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Contact</a></li>								
+								<div class="clear"></div>
+							</ul>
+						</div>		
+					</div>
+					<div class="header_right">
+					<!-- start search-->
+						<div class="sb-search">
+							<form>
+								<input class=".sb-search-input" placeholder="Enter your search term..." type="text" name="search"></input>
+								<input class=".sb-search-submit" type="submit" value="search"></input>		
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+<div id="main-wrap">
+	<div id="page">
+		<div id="main">
+			<div id="banner">
+				<div id="bannerleft">
+					<div class="wsite-header"></div>
+				</div>
+				<div id="bannerright" class="landing-banner-outer">
+					<div class="landing-banner-mid">
+						<div class="landing-banner-inner">
+							<h2>{headline:text global="false"}</h2>
+							<p>{headline-paragraph:text global="false"}</p>
+							{action:button global="false"}
+						</div><!-- end banner inner -->
+					</div><!-- end banner mid -->
+				</div><!-- end banner-right -->
+				<div style="clear:both"></div>
+			</div>
+			<div id="content">{content}</div>
+		</div>
+	</div>
+</div>
+	
 	<h1>Ace Adventure Comics</h1>
 	<p>Welcome to the Ace Adventure Comics store.</p>
 </body>
