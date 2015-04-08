@@ -5,6 +5,8 @@
     <link rel="shortcut icon" href="css/images/favicon.ico" />
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
+    <!--<script type="text/javascript" src="js/Main.js"></script>-->
+   
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -18,27 +20,32 @@
         <a class="logo" href="index.html"><img src="css/images/comiclogo.png"  /></a>
         <div class="cl"></div>
         <div id="search">
-            <form action="" method="post" >
+            <form action="" method="post">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search Store...">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
                 </div>
-                <div id="dd" class="wrapper-dropdown" tabindex="1">
-                    <span>Select a Publisher...</span>
-                    <ul class="dropdown">
-                        <li><a href="#">Marvel</a></li>
-                        <li><a href="#">Marvel</a></li>
-                        <li><a href="#">Marvel</a></li>
-                        <li><a href="#">Marvel</a></li>
-                    </ul>
+                <div class="input-group">
+                    <div id="dd1" class="wrapper-dropdown" tabindex="1">
+                        <span>Select Publisher...</span>
+                        <ul class="dropdown">
+                            <li><a href="#">Marvel</a></li>
+                            <li><a href="#">Darkhorse</a></li>
+                            <li><a href="#">Archie</a></li>
+                            <li><a href="#">Children</a></li>
+                        </ul>
+                    </div>
                 </div>
-                    <select>
-                        <option>Select a Category...</option>
-                        <option>Comics</option>
-                        <option>Graphic Novel</option>
-                        <option>Paperback</option>
-                    </select>
-                
+                <div class="input-group">
+                    <div id="dd2" class="wrapper-dropdown" tabindex="2">
+                        <span>Select Category...</span>
+                        <ul class="dropdown">
+                            <li><a href="#">Comics</a></li>
+                            <li><a href="#">Graphic Novel</a></li>
+                            <li><a href="#">Paperback</a></li>
+                        </ul>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -79,5 +86,41 @@
 		</div>
 			
 	</div>	
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    function DropDown(el) {
+        this.dd1 = el;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents: function () {
+            var obj = this;
+
+            obj.dd1.on('click', function (event) {
+                $(this).toggleClass('active');
+                event.stopPropagation();
+            });
+
+            obj.dd2.on('click', function (event) {
+                $(this).toggleClass('active');
+                event.stopPropagation();
+            });
+        }
+    }
+
+    $(function () {
+
+        var dd1 = new DropDown($('#dd1'));
+        var dd2 = new DropDown($('#dd2'));
+
+        $(document).click(function () {
+            // all dropdowns
+            $('.wrapper-dropdown').removeClass('active');
+        });
+
+    });
+
+    </script>
 </body>
 </html>
