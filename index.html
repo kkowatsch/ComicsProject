@@ -2,15 +2,46 @@
 <html>
 <head>
 	<title>Ace Adventure Comics</title>
+    <link rel="shortcut icon" href="css/images/favicon.ico" />
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>  
 <header id="header-wrap">
-	<a href="index.html"><img src="images/comiclogo.png" style="width:25%;"/></a>
+    <div id="header">
+        <div id="top-navigation">
+            <a title="My Account" href="#">MY ACCOUNT</a><a class="cart" title="Shopping Cart" href="#">SHOPPING CART</a><a class="checkout" title="Checkout" href="#">CHECKOUT</a><a title="Signout" href="#">SIGN-OUT</a><br /><br /><span>0 items</span><span class="sep">|</span><span>$0,00</span>
+        </div>
+        <a class="logo" href="index.html"><img src="css/images/comiclogo.png"  /></a>
+        <div class="cl"></div>
+        <div id="search">
+            <form action="" method="post" >
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Store...">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                </div>
+                <div id="dd" class="wrapper-dropdown" tabindex="1">
+                    <span>Select a Publisher...</span>
+                    <ul class="dropdown">
+                        <li><a href="#">Marvel</a></li>
+                        <li><a href="#">Marvel</a></li>
+                        <li><a href="#">Marvel</a></li>
+                        <li><a href="#">Marvel</a></li>
+                    </ul>
+                </div>
+                    <select>
+                        <option>Select a Category...</option>
+                        <option>Comics</option>
+                        <option>Graphic Novel</option>
+                        <option>Paperback</option>
+                    </select>
+                
+            </form>
+        </div>
+    </div>
 	<nav class="navbar navbar-default" id="nav" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse">
@@ -28,18 +59,6 @@
 				<li><a href="#">Contact</a></li>								
 				<li><div class="clear"></div></li>
 			</ul>
-			<div class="col-sm-4 col-md-4 pull-right">
-				<form class="navbar-form" role="search">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search" name="q">
-						<div class="input-group-btn">
-							<button class="btn btn-default" aria-label="search">
-                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                            </button>
-						</div>
-					</div>
-				</form>
-			</div>  
 		</div>					
 	</nav>
 </header>
