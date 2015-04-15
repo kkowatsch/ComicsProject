@@ -3,13 +3,21 @@ ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fields
 	padding: 0;
 }
 /*------------------------------------GENERAL PAGE STYLING-------------------------------------------*/
-body {
+html, body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	background-color:#FAFE66;
 	color: #000;
-	margin: 0;
-	padding: 0;
+    height: 100%;
+}
+.page-container{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+  /* negative indent footer by its height */
+    margin: 0 auto -120px;
+  /* pad bottom by footer height */
+    padding: 0 0 120px;
 }
 h2 {
 	font-size: 1.6em;
@@ -28,18 +36,33 @@ p {
 	margin: 0;
 	padding: .5em 0;
 }
-#header-wrap,
-#main-wrap,
-#footer-wrap {
-	min-width: 960px;
-}
-#header-wrap {
+header {
 	background: #FF3C32;
 }
 .cl { display: block; height: 0; font-size: 0; line-height: 0; text-indent: -4000px; clear: both; }
+section{
+    background-color:#3b76aa;
+    padding:5%;
+    border-radius:3px;
+}
+section h2{
+        color:#fff;
+}
+
+/* set the fixed height of the footer here */
+footer {
+  height: 120px;
+  background-color: #222222;
+  border:0 solid #080808;
+  border-top-width: 1px;
+  margin-top:50px;
+}
+
+footer > .container {
+  padding: 20px;
+}
 /*---------------------------------HEADER------------------------------------*/
 #nav{
-    
 	background-color:#4A6CC7;
 	border:none;
 	border-radius:0;
@@ -66,12 +89,46 @@ p {
 #top-navigation span.sep { padding: 0 7px; color: #8dbde0; }
 #top-navigation span { float:right;font-size: 11px; color: #fff; }
 
-#search { position: absolute; top:52px; right: 50px; width: 190px; }
-#search .field { display: inline; float: left; padding: 8px 0 9px 15px; background: none; border: 0; width: 145px;}
-#search .field { font-family: Tahoma, arial, sans-serif; font-size: 11px; color: #959595; line-height: 14px; }
-#search .submit-button { display: inline; float: right; width: 30px; height: 30px; background: none; border: 0; cursor: pointer; }
-#search .glyphicon{padding:0;margin:0;width:125%;border:none;}
-#search .glyphicon-search{    background-image:url('images/glyphicons_027.png');background-repeat:no-repeat;background-size:100%;}
+#sidebar {
+      height: 100%;
+  padding-right: 0;
+  padding-top: 20px;
+/*float : left;
+margin : 0 10px 0 0;
+padding : 1%;
+height:100%;
+background-color:#fff;
+position:static;*/
+}
+
+#sidebar .affix {
+  position:fixed;
+  width:220px;
+}
+
+#sidebar .affix-bottom {
+  position:fixed;
+  width:220px;
+}
+
+#sidebar .nav {
+  width: 95%;
+}
+#sidebar li {
+  border:0 #1e1e1e solid;
+  border-bottom-width:1px;
+}
+#sidebar li a {
+  padding-left:1px;
+}
+#sidebar li a:hover {
+  background-color:#222222;
+  color:#ffffff;
+}
+#search { position:inherit; padding-top:1%; width: 250px;}
+input{
+    width:100px;
+}
 
 /*GLOBALS*/
 *,
@@ -110,6 +167,7 @@ p {
     width: 190px;
     margin: 0 auto;
     padding: 8px 0 9px 15px;
+    z-index:1;
 
     /* Styles */
     font-family: Tahoma, arial, sans-serif; font-size: 11px; color: #959595; line-height: 14px;
@@ -180,8 +238,46 @@ p {
     max-height: 400px;
 }
 
-/*--------------------------WRAPPER----------------------------*/
+/*----------------------------------PAGE CONTENT----------------------------------------*/
 .wrapper{
 	width:100%;
 	padding:10px 80px;
 }
+
+img{max-width: 100%!important;height: auto!important;}
+
+#slider-frame { position: relative; padding-bottom: 37px; width: 921px; height: 449px; background: url(images/slider-frame.jpg) no-repeat 0 0; }
+#slider { position: relative; display: inline; float: left; width: 920px; }
+
+a.order-button { display: block; margin: 28px 0 0 13px; width: 186px; height: 81px; background: url(images/order-button.png) no-repeat 0 0; text-indent: -4000px; cursor: pointer; z-index: 50; }
+.jcarousel-container { position: relative; padding: 37px 0 0 0; width: 920px; height: 356px; }
+.jcarousel-clip { position: relative; overflow: hidden; width: 920px; height: 356px; }
+.jcarousel-clip ul li { position: relative; padding-left: 130px;  width: 790px; height: 356px; }
+.jcarousel-clip .caption { position: absolute; width: 430px; height: 100%; top: 0; left: 490px; }
+.jcarousel-clip .caption p { padding: 14px 0 0 14px; font-family: 'Trebuchet MS', arial, helvetica, sans-serif; font-size: 26px; line-height: 28px; color: #3b76aa; font-weight: bold; letter-spacing: -1px; }
+.jcarousel-control { position: absolute; top: 412px; left: 40%; width: 0; }
+.jcarousel-control a { display: block; float: left; margin-right: 5px; width: 15px; height: 15px; text-indent: -4000px; background: url(images/slider-nav.png) no-repeat 0 0; }
+.jcarousel-control a:hover { background-position: 0 -15px; }
+.jcarousel-control a.active { background-position: 0 -15px; }
+
+#prev { position: absolute; top: 173px; left: 20px; display: block; width: 35px; height: 56px; background: url(images/slider-arrows.png) no-repeat 0 0; text-indent: -4000px; } 
+#next { position: absolute; top: 173px; right: 20px; display: block; width: 35px; height: 56px; background: url(images/slider-arrows.png) no-repeat -35px 0; text-indent: -4000px; }
+/*.jumbotron {
+  background-color:#fff;
+}
+.carousel-inner {
+    width: 200px;
+    height: 120px;
+}
+.item > img{
+height: auto;
+ width: 120px;
+ overflow:hidden;
+}*/
+.container-fluid, .container, section{
+    /*border:5px solid red;*/
+}
+/*.container{
+    padding:0;margin:0;
+}*/
+
